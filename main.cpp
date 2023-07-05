@@ -333,13 +333,13 @@ void drawf() {
 
 void checklines() {
 	setCursor(18, 0);
-	cout << "Очки: " << score;
+	cout << "РћС‡РєРё: " << score;
 	setCursor(18, 1);
-	cout << "Уровень: " << level;
+	cout << "РЈСЂРѕРІРµРЅСЊ: " << level;
 	short linesdestroyed = 0;
 	short lineempty = -1;
 	bool block;
-	for (int i = 0; i < 20; i++) {//проверка готовых линий
+	for (int i = 0; i < 20; i++) {//РїСЂРѕРІРµСЂРєР° РіРѕС‚РѕРІС‹С… Р»РёРЅРёР№
 		block = true;
 		for (int j = 0; j < 14; j++) {
 			if (!buff[i][j]) block = false;
@@ -351,26 +351,26 @@ void checklines() {
 			}
 		}
 	}
-	if (linesdestroyed > 0) {//сдвиг
-		for (int i = 19; i >= 0; i--) {//i - проверяемая строчка
+	if (linesdestroyed > 0) {//СЃРґРІРёРі
+		for (int i = 19; i >= 0; i--) {//i - РїСЂРѕРІРµСЂСЏРµРјР°СЏ СЃС‚СЂРѕС‡РєР°
 			block = false;
 			for (int j = 0; j < 14; j++) {
 				if (buff[i][j]) block = true;
 			}
 
-			if (lineempty > -1) {//если на линии есть блок и известна пустая линия, то сдвинуть вниз
+			if (lineempty > -1) {//РµСЃР»Рё РЅР° Р»РёРЅРёРё РµСЃС‚СЊ Р±Р»РѕРє Рё РёР·РІРµСЃС‚РЅР° РїСѓСЃС‚Р°СЏ Р»РёРЅРёСЏ, С‚Рѕ СЃРґРІРёРЅСѓС‚СЊ РІРЅРёР·
 				if (block) {
-					for (int j = i; j >= 0; j--) {//цикл копирования линий
-						for (int l = 0; l < 14; l++) {//цикл копирования блоков слева на право
-							buff[lineempty - (i - j)][l] = buff[j][l];//копирование линии на место пустой
-							buff[j][l] = false;//очистка перемещаемой линии
+					for (int j = i; j >= 0; j--) {//С†РёРєР» РєРѕРїРёСЂРѕРІР°РЅРёСЏ Р»РёРЅРёР№
+						for (int l = 0; l < 14; l++) {//С†РёРєР» РєРѕРїРёСЂРѕРІР°РЅРёСЏ Р±Р»РѕРєРѕРІ СЃР»РµРІР° РЅР° РїСЂР°РІРѕ
+							buff[lineempty - (i - j)][l] = buff[j][l];//РєРѕРїРёСЂРѕРІР°РЅРёРµ Р»РёРЅРёРё РЅР° РјРµСЃС‚Рѕ РїСѓСЃС‚РѕР№
+							buff[j][l] = false;//РѕС‡РёСЃС‚РєР° РїРµСЂРµРјРµС‰Р°РµРјРѕР№ Р»РёРЅРёРё
 						}
 					}
-					i = lineempty;//возвращение проверяемой линии на место бывшей пустой линии
-					lineempty = -1;//пустая линия неизвестна
+					i = lineempty;//РІРѕР·РІСЂР°С‰РµРЅРёРµ РїСЂРѕРІРµСЂСЏРµРјРѕР№ Р»РёРЅРёРё РЅР° РјРµСЃС‚Рѕ Р±С‹РІС€РµР№ РїСѓСЃС‚РѕР№ Р»РёРЅРёРё
+					lineempty = -1;//РїСѓСЃС‚Р°СЏ Р»РёРЅРёСЏ РЅРµРёР·РІРµСЃС‚РЅР°
 				}
 			}
-			else if(!block) {//если линия пуста, то линия известна
+			else if(!block) {//РµСЃР»Рё Р»РёРЅРёСЏ РїСѓСЃС‚Р°, С‚Рѕ Р»РёРЅРёСЏ РёР·РІРµСЃС‚РЅР°
 				lineempty = i;
 			}
 		}
@@ -471,11 +471,11 @@ void restart() {
 	setCursor(18, 1);
 	cout << "          ";
 	setCursor(18, 2);
-	cout << "Седующая: ";
+	cout << "РЎРµРґСѓСЋС‰Р°СЏ: ";
 	setCursor(18, 0);
-	cout << "Очки: " << score;
+	cout << "РћС‡РєРё: " << score;
 	setCursor(18, 1);
-	cout << "Уровень: " << level;
+	cout << "РЈСЂРѕРІРµРЅСЊ: " << level;
 	for (int i = 0; i < 20; i++)
 		for (int j = 0; j < 14; j++) {
 			buff[i][j] = false;
@@ -485,7 +485,7 @@ void restart() {
 }
 
 void draw() {
-	cout << "=====ТЕТРИС=====" << endl;
+	cout << "=====РўР•РўР РРЎ=====" << endl;
 	cout << "=              =" << endl;
 	cout << "=              =" << endl;
 	cout << "=              =" << endl;
@@ -509,23 +509,23 @@ void draw() {
 	cout << "================" << endl;
 
 	setCursor(18, 2);
-	cout << "Седующая: ";
+	cout << "РЎРµРґСѓСЋС‰Р°СЏ: ";
 	setCursor(18, 0);
-	cout << "Очки: " << score;
+	cout << "РћС‡РєРё: " << score;
 	setCursor(18, 1);
-	cout << "Уровень: " << level;
+	cout << "РЈСЂРѕРІРµРЅСЊ: " << level;
 	setCursor(18, 5);
-	cout << "Управление: ";
+	cout << "РЈРїСЂР°РІР»РµРЅРёРµ: ";
 	setCursor(18, 6);
-	cout << "Влево/Вправо - Управление фигурой";
+	cout << "Р’Р»РµРІРѕ/Р’РїСЂР°РІРѕ - РЈРїСЂР°РІР»РµРЅРёРµ С„РёРіСѓСЂРѕР№";
 	setCursor(18, 7);
-	cout << "Вверх - Поворот фигуры";
+	cout << "Р’РІРµСЂС… - РџРѕРІРѕСЂРѕС‚ С„РёРіСѓСЂС‹";
 	setCursor(18, 8);
-	cout << "Вниз - Быстрый спуск фигуры";
+	cout << "Р’РЅРёР· - Р‘С‹СЃС‚СЂС‹Р№ СЃРїСѓСЃРє С„РёРіСѓСЂС‹";
 	setCursor(18, 9);
-	cout << "Пробел - Пауза";
+	cout << "РџСЂРѕР±РµР» - РџР°СѓР·Р°";
 	setCursor(18, 10);
-	cout << "F1 - Настройки";
+	cout << "F1 - РќР°СЃС‚СЂРѕР№РєРё";
 }
 
 void rotatef() {
@@ -1162,14 +1162,14 @@ void settings() {
 	pause = true;
 	selectedStr = 0;
 	system("cls");
-	cout << "Настройки:" << endl << ">Тип управления: ";
+	cout << "РќР°СЃС‚СЂРѕР№РєРё:" << endl << ">РўРёРї СѓРїСЂР°РІР»РµРЅРёСЏ: ";
 	if (controlType) {
-		cout << "Спортивный" << endl;
+		cout << "РЎРїРѕСЂС‚РёРІРЅС‹Р№" << endl;
 	}
 	else {
-		cout << "Обычный" << endl;
+		cout << "РћР±С‹С‡РЅС‹Р№" << endl;
 	}
-	cout << " Чувствительнсть управления: " << sens;
+	cout << " Р§СѓРІСЃС‚РІРёС‚РµР»СЊРЅСЃС‚СЊ СѓРїСЂР°РІР»РµРЅРёСЏ: " << sens;
 	while (nkey != 27) {
 		nkey = _getch();
 		if ((nkey == 72) || (nkey == 80)) {
@@ -1219,12 +1219,12 @@ void settings() {
 				if (!controlType) {
 					controlType = 1;
 					setCursor(17, 1);
-					cout << "Спортивный" << endl;
+					cout << "РЎРїРѕСЂС‚РёРІРЅС‹Р№" << endl;
 				}
 				else {
 					controlType = 0;
 					setCursor(17, 1);
-					cout << "Обычный" << endl;
+					cout << "РћР±С‹С‡РЅС‹Р№" << endl;
 				}
 			}
 		}
@@ -1261,16 +1261,16 @@ int main() {
 				if (_kbhit()) {
 					key = _getch();
 					switch (key) {
-					case 72://вверх
+					case 72://РІРІРµСЂС…
 						if (!pause)rotatef();
 						break;
-					case 75://влево
+					case 75://РІР»РµРІРѕ
 						if (!pause)movef(2);
 						break;
-					case 77://вправо
+					case 77://РІРїСЂР°РІРѕ
 						if (!pause)movef(0);
 						break;
-					case 80://вниз
+					case 80://РІРЅРёР·
 						if (!pause)movef(1);
 						break;
 					case 59:
