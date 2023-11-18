@@ -1,0 +1,2 @@
+#define tetris_VERSION_MAJOR @tetris_VERSION_MAJOR@
+#define tetris_VERSION_MINOR @tetris_VERSION_MINOR@
